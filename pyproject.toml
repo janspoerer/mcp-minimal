@@ -1,0 +1,41 @@
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mcp-minimal"
+version = "0.1.0"
+description = "A minimal FastMCP server with datetime functionality. Only for configuration and debugging purposes."
+readme = "README.md"
+authors = [
+    {name = "Jan Spörer", email = "jan.spoerer@whu.edu"}
+]
+license = {text = "Apache"}
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache License",
+    "Operating System :: OS Independent",
+]
+requires-python = ">=3.10"
+dependencies = [
+    "fastmcp",
+    "datetime",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "black",
+    "isort",
+]
+
+[tool.setuptools]
+packages = ["mcp_minimal"]
+
+[tool.black]
+line-length = 88
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+line_length = 88
